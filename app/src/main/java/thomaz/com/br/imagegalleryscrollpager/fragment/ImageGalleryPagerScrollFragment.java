@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
+import com.daimajia.slider.library.Tricks.ViewPagerEx;
 
 import java.util.ArrayList;
 
@@ -55,6 +56,22 @@ public class ImageGalleryPagerScrollFragment extends Fragment {
         });
 
         slider = ((SliderLayout) view.findViewById(R.id.slider));
+        slider.addOnPageChangeListener(new ViewPagerEx.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                rvImages.smoothScrollToPosition(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
         rvImages = ((RecyclerView) view.findViewById(R.id.rvImages));
 
