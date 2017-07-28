@@ -3,7 +3,7 @@
 
 ## Demo
  
-![](http://imgur.com/XbqYB7E)
+![](https://github.com/maarqin/ImageGalleryScrollPager/blob/master/GIF_20170728_115819.gif?raw=true)
 
 [Download Apk](https://github.com/daimajia/AndroidImageSlider/releases/download/v1.0.8/demo-1.0.8.apk)
  
