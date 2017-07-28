@@ -19,7 +19,7 @@ allprojects {
    }
 }
 dependencies {
-      compile 'com.github.maarqin:ImageGalleryScrollPager:v1.1'
+      compile 'com.github.maarqin:ImageGalleryScrollPager:v1.3'
 }
 ```
 
@@ -37,7 +37,7 @@ dependencies {
 <dependency>
     <groupId>com.github.maarqin</groupId>
     <artifactId>ImageGalleryScrollPager</artifactId>
-    <version>v1.1</version>
+    <version>v1.3</version>
 </dependency>
 ```
 
