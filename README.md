@@ -4,8 +4,6 @@
 ## Demo
  
 ![](https://github.com/maarqin/ImageGalleryScrollPager/blob/master/GIF_20170728_115819.gif?raw=true)
-
-[Download Apk](https://github.com/daimajia/AndroidImageSlider/releases/download/v1.0.8/demo-1.0.8.apk)
  
 ## Usage
 
@@ -14,11 +12,14 @@
 #### Gradle
 
 ```groovy
+allprojects {
+   repositories {
+      ... 
+      maven { url 'https://jitpack.io' }
+   }
+}
 dependencies {
-    	compile "com.android.support:support-v4:+"
-    	compile 'com.squareup.picasso:picasso:2.3.2'
-    	compile 'com.nineoldandroids:library:2.4.0'
-    	compile 'com.daimajia.slider:library:1.1.5@aar'
+      compile 'com.github.maarqin:ImageGalleryScrollPager:v.1.1'
 }
 ```
 
@@ -26,21 +27,17 @@ dependencies {
 #### Maven
 
 ```xml
+<repositories>
+   <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
+   </repository>
+</repositories>
+
 <dependency>
-    <groupId>com.squareup.picasso</groupId>
-    <artifactId>picasso</artifactId>
-    <version>2.3.2</version>
-</dependency>
-<dependency>
-    <groupId>com.nineoldandroids</groupId>
-    <artifactId>library</artifactId>
-    <version>2.4.0</version>
-</dependency>
-<dependency>
-    <groupId>com.daimajia.slider</groupId>
-    <artifactId>library</artifactId>
-    <version>1.1.2</version>
-    <type>apklib</type>
+    <groupId>com.github.maarqin</groupId>
+    <artifactId>ImageGalleryScrollPager</artifactId>
+    <version>v1.1</version>
 </dependency>
 ```
 
@@ -65,26 +62,43 @@ If you want to load images from drawable, then no additional permissions are nec
 Add the Slider to your layout:
  
 ```java
-<com.daimajia.slider.library.SliderLayout
-        android:id="@+id/slider"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-/>
-```        
+...
+
+<FrameLayout
+    android:id="@+id/flImagesProduct"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+    
+...     
+```
  
-There are some default indicators. If you want to use a provided indicator:
  
 ```java
-<com.daimajia.slider.library.Indicators.PagerIndicator
-        android:id="@+id/custom_indicator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        />
-```
+...
 
-[Code example](https://github.com/daimajia/AndroidImageSlider/blob/master/demo%2Fsrc%2Fmain%2Fjava%2Fcom%2Fdaimajia%2Fslider%2Fdemo%2FMainActivity.java)
- 
+ArrayList<Image> galleryImages = new ArrayList<>();
+
+galleryImages.add(new Image("https://goo.gl/FLsg2K"));
+...
+galleryImages.add(new Image("https://goo.gl/MHDwhE"));
+
+FragmentManager fragmentManager = getChildFragmentManager();
+FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+ImageGalleryPagerScrollFragment galleryImageScrollViewFragment = new ImageGalleryPagerScrollFragment();
+
+Bundle bundle = new Bundle();
+bundle.putParcelableArrayList(ImageGalleryPagerScrollFragment.ITEMS, galleryImages);
+
+galleryImageScrollViewFragment.setArguments(bundle);
+
+fragmentTransaction.replace(R.id.flImagesProduct, galleryImageScrollViewFragment);
+
+fragmentTransaction.commit();
+
+...
+```        
+
 ====
  
 ## Advanced usage
@@ -98,5 +112,7 @@ Please visit [Wiki](https://github.com/daimajia/AndroidImageSlider/wiki)
 - [ViewPagerTransforms](https://github.com/ToxicBakery/ViewPagerTransforms)
 
 ## About me
- 
-I am a student in mainland China. I love Google, love Android, love everything that is interesting. If you get any problems when using this library or you have an internship opportunity, please feel free to [email me](mailto:daimajia@gmail.com). :smiley:
+
+Hi, I am Marcos and I am from Brazil.
+I've been working with web and mobile programming for some years.
+I am a student of the Computer Science course and currently work as an Android programmer in a company specializing in mobile development. If you get any problems when using this library or you have an internship opportunity, please feel free to [email me](mailto:thomaz.dev@gmail.com). :smiley:
