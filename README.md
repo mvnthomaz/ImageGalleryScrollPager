@@ -98,8 +98,6 @@ fragmentTransaction.commit();
 
 ...
 ```        
-
-====
  
 ## Advanced usage
 
@@ -115,4 +113,4 @@ Please visit [Wiki](https://github.com/daimajia/AndroidImageSlider/wiki)
 
 Hi, I am Marcos and I am from Brazil.
 I've been working with web and mobile programming for some years.
-I am a student of the Computer Science course and currently work as an Android programmer in a company specializing in mobile development. If you get any problems when using this library or you have an internship opportunity, please feel free to [email me](mailto:thomaz.dev@gmail.com). :smiley:
+I am a student of the Computer Science course and currently work as an Android programmer in a company specializing in mobile development. If you get any problems when using this library, please feel free to [email me](mailto:thomaz.dev@gmail.com). :smiley:
