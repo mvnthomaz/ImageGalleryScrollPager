@@ -3,7 +3,7 @@
 
 ## Demo
  
-![](http://i.imgur.com/XbqYB7E.gifv)
+![](http://imgur.com/XbqYB7E)
 
 [Download Apk](https://github.com/daimajia/AndroidImageSlider/releases/download/v1.0.8/demo-1.0.8.apk)
  
