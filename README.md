@@ -19,7 +19,7 @@ allprojects {
    }
 }
 dependencies {
-      compile 'com.github.maarqin:ImageGalleryScrollPager:v.1.1'
+      compile 'com.github.maarqin:ImageGalleryScrollPager:v1.1'
 }
 ```
 
